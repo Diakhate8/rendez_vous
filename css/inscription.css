@@ -1,0 +1,14 @@
+.form-control{
+    margin-top: 3px;
+    border-radius: 10px;
+
+}
+.form-control:hover{
+    color: rgb(89, 226, 146);
+    
+}
+.btn{
+    width: 150px;
+    margin-top: 3px;
+    border-radius: 10px;
+}
