@@ -15,6 +15,13 @@ class Table extends Mabase{
         $resultat = $req->execute();
         return $resultat;
     }
+    //suppression de donnees
+    public function delete($Nomtable,$nomid){
+        $sql =" DELETE FROM $Nomtable WHERE $nomid = 2";
+        
+        $result = $this->connect()->query($sql);
+        return $result;
+    }
 
     //select all data from the database
     public function select($table){
@@ -38,6 +45,22 @@ class Table extends Mabase{
         $result = $this->connect()->query($sql);
 
         if($result->rowCount() > 0){
+
+            while($row = $result->fetch()){
+
+                $data[] = $row ;
+            }
+        }
+        return $data ;
+    }
+    //select 2 controle
+    public function select2($nomtable,$email_con,$mdp_con){
+        
+        $req = "SELECT * FROM $nomtable WHERE Email = $email_con AND Mdp = $mdp_con";
+
+        $result = $this->connect()->query($req);
+
+        if($result->rowCount() > o){
 
             while($row = $result->fetch()){
 
@@ -78,7 +101,21 @@ class Table extends Mabase{
         }
         return $data ;
     }
+    //select one data from the database
+    public function selectJ($table1,$table2,$champ,$id){
+        $sql ="SELECT * FROM $table1,$table2 WHERE $table1.$champ=$id ORDER BY $table1 " ;
 
+        $result = $this->connect()->query($sql);
+
+        if($result->rowCount() > 0){
+
+            while($row = $result->fetch()){
+
+                $data[] = $row ;
+            }
+        }
+        return $data ;
+    }
 
 
 
