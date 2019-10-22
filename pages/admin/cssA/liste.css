@@ -1,0 +1,38 @@
+
+
+    body {
+        position: relative; 
+    }
+    ul,li{
+        display: inline-block;
+        margin-left:20px; 
+    }
+    
+    .affix {
+        top:0;
+        width: 100%;
+        z-index: 9999 !important;
+    }
+    
+    .affix ~ .container-fluid {
+    position: relative;
+    top: 50px;
+    }
+    .navbar-brand{
+        color: black;
+        font-size: 20px;
+
+    }
+    ul li a{
+        display: inline-block;
+    }
+    ul li a{
+        color: black;
+        font-size: 17px;
+    }
+    button.navbar-toggle.collapsed{
+        background-color: red;
+    }
+  
+   
+    

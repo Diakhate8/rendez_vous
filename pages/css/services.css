@@ -1,0 +1,23 @@
+table{
+    width: 100%;
+    background: rgba(255, 255, 255, 0.63);
+}
+.liste,tr,th,td{
+    border-collapse: collapse;
+    border: solid rgb(20, 21, 24) 1px;
+    border-collapse: collapse;
+    
+   
+}
+#body{
+    background-image: url(../../images/service.jpg);
+    background-repeat: no-repeat ;
+    background-size: 100%;
+}
+td{
+    font-size: 17px;
+    
+}
+#erreur{
+    color: red;
+}

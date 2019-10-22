@@ -1,0 +1,30 @@
+
+    body {
+        position: relative; 
+    }
+    ul,li{
+        display: inline-block;
+        margin-left:20px; 
+    }
+    
+    .affix {
+        top:0;
+        width: 100%;
+        z-index: 9999 !important;
+    }
+    .navbar {
+        margin-bottom: 0px;
+    }
+
+    .affix ~ .container-fluid {
+    position: relative;
+    top: 50px;
+    }
+    ul li a{
+        display: inline-block;
+    }
+    ul li a{
+        
+        font-size: 17px;
+    }
+    
