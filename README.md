@@ -1,2 +1,2 @@
 # rendez_vous
-projet rendez-vous Hopital
+projet gestion rendez-vous Hopital
