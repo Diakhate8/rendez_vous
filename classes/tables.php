@@ -15,15 +15,19 @@ class Table extends Mabase{
         $resultat = $req->execute();
         return $resultat;
     }
+
     //suppression de donnees
-    public function delete($Nomtable,$nomid){
-        $sql =" DELETE FROM $Nomtable WHERE $nomid = 2";
-        
-        $result = $this->connect()->query($sql);
+
+    public function delete($Nomtable,$nomid,$id){
+        $req =" DELETE FROM $Nomtable WHERE $nomid = :id";
+        $sql = $this->connect()->prepare($req);
+        $sql->bindValue(':id',$id);
+        $result = $sql->execute();
         return $result;
     }
 
     //select all data from the database
+    
     public function select($table){
         $sql ="SELECT * FROM $table " ;
 
@@ -35,8 +39,12 @@ class Table extends Mabase{
 
                 $data[] = $row ;
             }
+            return $data ;
         }
-        return $data ;
+        if($result->rowCount() < 0){
+            return '';
+        }
+        
     }
     //select one data from the database
     public function select1($table,$champ,$id){
@@ -50,8 +58,11 @@ class Table extends Mabase{
 
                 $data[] = $row ;
             }
+            return $data ;
         }
-        return $data ;
+        if($result->rowCount() < 0){
+            return '';
+        }
     }
     //select 2 controle
     public function select2($nomtable,$email_con,$mdp_con){
@@ -60,14 +71,17 @@ class Table extends Mabase{
 
         $result = $this->connect()->query($req);
 
-        if($result->rowCount() > o){
+        if($result->rowCount() > 0){
 
             while($row = $result->fetch()){
 
                 $data[] = $row ;
             }
+            return $data ;
         }
-        return $data ;
+        if($result->rowCount() < 0){
+            return '';
+        }
     }
     //jointure inner join
      public function jointN($table1,$table2,$champ){ 
